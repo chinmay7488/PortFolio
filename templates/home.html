@@ -1,0 +1,282 @@
+{% extends 'index.html' %}
+
+{% block CSS%}
+<style>
+    .home {
+        position: relative;
+        margin-top: -50px;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 70px 10% 0;
+    }
+
+    .home-content {
+        max-width: 600px;
+    }
+
+    .home-content h3 {
+        color: var(--text-100);
+        font-size: 32px;
+        font-weight: 700;
+        opacity: 0;
+        animation: slideBottom 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .home-content h3:nth-last-of-type(2) {
+        margin-bottom: 9px;
+        animation: slideTop 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .home-content h3 span {
+        color: var(--accent-100);
+    }
+
+    .home-content h1 {
+        font-size: 56px;
+        font-weight: 700;
+        margin: 10px 0;
+        color: var(--text-100);
+        opacity: 0;
+        animation: slideRight 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .home-content p {
+        font-size: 20px;
+        color: var(--text-100);
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: .7s;
+    }
+
+    .home-img img {
+        max-width: 450px;
+        display: flex;
+        margin-right: -20px;
+        opacity: 0;
+        animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+        animation-delay: 2s, 3s;
+    }
+
+    .social-media a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: 2px solid var(--accent-100);
+        border-radius: 50%;
+        font-size: 20px;
+        color: var(--accent-100);
+        text-decoration: none;
+        margin: 30px 15px 30px 0;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: calc(.2s * var(--i));
+    }
+
+    .social-media a:hover {
+        background-color: var(--accent-100);
+        color: var(--bg-300);
+        box-shadow: 0 0 20px var(--accent-200);
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background: var(--accent-100);
+        border-radius: 40px;
+        box-shadow: 0 0 10px var(--accent-100);
+        font-size: 16px;
+        color: var(--text-100);
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-weight: 600;
+        opacity: 0;
+        animation: slideLeft 1s ease forwards;
+        animation-delay: 2s;
+    }
+
+    .section-intro {
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .section-intro h3 {
+        color: var(--text-100);
+    }
+
+    .section-intro ul {
+        color: var(--text-200);
+        margin-left: 20px;
+        list-style: circle;
+    }
+
+    .intro-div {
+        margin-left: 50px;
+        width: 800px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro-div li {
+        font-weight: 100;
+        margin: 12px 0pc 0px 0px;
+    }
+
+
+    @keyframes slideBottom {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideTop {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideLeft {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes floatImage {
+
+        0% {
+            transform: translateY();
+        }
+
+        50% {
+            transform: translateY(-24px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+</style>
+
+
+
+{%endblock%}
+
+{% block body%}
+{% load static %}
+
+<section class="home">
+    <div class="home-content">
+        <h3>Hello, It's Me</h3>
+        <h1>Chinmay Jain</h1>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
+        <p>"Experienced .NET Developer with a Passion for Python and Machine Learning"</p>
+        <div class="social-media">
+            <a href="" style="--i:5;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="" style="--i:6;"><i class="fa-brands fa-github"></i></a>
+            <a href="" style="--i:7;"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="" style="--i:8;"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <a href="#" class="btn">Download Resume</a>
+    </div>
+    <div class="home-img">
+        <img src="static/edited portfolio.png" alt="" />
+    </div>
+
+</section>
+
+<section class="section-intro">
+    <div class="intro-div">
+        <h3> Welcome to my portfolio! I am thrilled to share my passion for programming and my commitment to
+            continuous
+            growth and exploration.</h3>
+        <ul>
+            <li>My journey as a software engineer began with a deep fascination for programming, which has only
+                grown
+                stronger over time. Every day, I eagerly seek out new challenges and opportunities to expand my
+                knowledge and skills.</li>
+            <li>Proficiency in languages such as C# and Python allows me to communicate fluently with computers and
+                develop elegant solutions. I have a particular affinity for modern technologies like Python, machine
+                learning, artificial intelligence, and the Internet of Things (IoT). Leveraging these cutting-edge
+                tools, I strive to create innovative products that make a tangible impact.</li>
+            <li>With 1.6 years of experience in dotNet development, I have honed my skills in building robust and
+                scalable applications. From developing efficient algorithms to designing intuitive user interfaces,
+                I
+                have gained a comprehensive understanding of the software development lifecycle.</li>
+            <li>Currently, I am actively seeking new opportunities to contribute my expertise and embark on new
+                professional challenges.If you are interested in discussing potential collaborations or employment
+                opportunities, I would be delighted to connect.</li>
+        </ul>
+    </div>
+    
+</section>
+
+{%endblock%}
+
+
+{% block script %}
+
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    var type = new Typed('.multiple-text', {
+        strings: ["dotNet Developer", "Python Developer", "Machine Learning Engineer", "Artificial intelligence Engineer"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true
+    })
+</script>
+{%endblock%}
