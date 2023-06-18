@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-
+{% load static %}
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <style>
         @font-face {
             font-family: AkayaKanadaka;
-            src: url('static/AkayaKanadaka-Regular/font.ttf');
+            src: url("{% static 'font/font.ttf' %}");
         }
 
         * {
@@ -51,6 +51,7 @@
             bottom: 0;
             height: 90px;
             width: 100%;
+            z-index: 9999;
         }
 
 
@@ -95,7 +96,7 @@
         .navigation ul li a .icon {
             position: relative;
             display: block;
-            line-height: 85px;
+            line-height: 87px;
             font-size: 1.5em;
             text-align: center;
             transition: 0.5s;
@@ -344,7 +345,6 @@
 <body>
     <!-- <div id="pre-loader"></div> -->
 
-    <section>
         <header>
             <div class="navigation">
                 <ul>
@@ -369,7 +369,7 @@
                     <li class="list {% if request.path == '/resume/' %}active{% endif %}">
                         <a href="/resume" style="--i:4;">
                             <span class="icon"><ion-icon name="document-outline"></ion-icon></span>
-                            <span class="text">Resume</span>
+                            <span class="text">Experience</span>
                         </a>
                     </li>
                     <div class="indicator"></div>
@@ -377,7 +377,6 @@
             </div>
 
         </header>
-    </section>
 
 
     {% block body%}
