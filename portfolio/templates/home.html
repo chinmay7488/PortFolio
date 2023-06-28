@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+{% block title %}Home{% endblock %}
+
 {% block CSS%}
 <style>
     .home {
@@ -285,3 +287,55 @@
     })
 </script>
 {%endblock%}
+
+
+<!-- <div class="certi-container">
+    <div class="certi-card">
+        <img src="{% static 'images.png'%}" class="certi-img"> 
+        <div class="certi-intro">
+            <h1>Cheetah</h1>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+.certi-container{
+    display: flex;
+}
+.certi-card{
+    height: 500px;
+    margin: 50px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+}
+.certi-img{
+    height: 500px;
+    width: 350px;
+    border-radius: 3px;
+}
+.certi-intro{
+    height: 200px;
+    width: 350px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 240px;
+    background: rgb(27, 27, 27,0.5);
+    color: white;
+}
+h1{
+    margin: 10px;
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+span{
+    font-weight: bold;
+}
+.certi-card:hover{
+    cursor: pointer;
+} -->
